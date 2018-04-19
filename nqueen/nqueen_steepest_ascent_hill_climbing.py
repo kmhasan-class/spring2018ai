@@ -1,7 +1,14 @@
+import random
+
 def get_random_board(n):
     #homework write the body of this function
     #return a random board of size n x n
-    board = [1, 0, 2, 2]
+    #board = [1, 0, 2, 2]
+    board = []
+    for i in range(0, n):
+        row = random.randint(0, n - 1)
+        board.append(row)
+    print("Randomly generated board: ", board)
     return board
 
 
@@ -53,7 +60,7 @@ def get_next_board(board):
     return better_board, least_conflicts
 
 
-board = get_random_board(4)
+board = get_random_board(8)
 
 best_board = list(board)
 least_conflicts = count_conflicts(best_board)
